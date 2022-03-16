@@ -4,7 +4,7 @@ trigger:
     - main
   paths:
     include:
-    - /First_Folder/*
+    - /first_folder/*
 
 pool:
   vmImage: ubuntu-latest
