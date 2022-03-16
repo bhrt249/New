@@ -4,7 +4,7 @@ trigger:
     - main
   paths:
     include:
-    - /Second_Folder/*
+    - /First_Folder/*
 
 
 pool:
