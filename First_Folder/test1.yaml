@@ -52,7 +52,7 @@ stages :
             backendAzureRmResourceGroupName: 'ADO'
             backendAzureRmStorageAccountName: 'adostg'
             backendAzureRmContainerName: 'adocontain'
-            backendAzureRmKey: 'second'
+            backendAzureRmKey: 'first'
          - task: TerraformTaskV1@0
            inputs:
               provider: 'azurerm'
