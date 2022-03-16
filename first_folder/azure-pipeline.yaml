@@ -22,6 +22,7 @@ stages :
         displayName: "Install"
         inputs:
            terraformVersion: 0.13.4
+           backendServiceArm: 'ARM'
       - task: TerraformTaskV1@0
         displayName: 'init'
         inputs:
