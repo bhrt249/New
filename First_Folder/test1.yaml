@@ -1,4 +1,14 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - /Second_Folder/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
 
 pool:
   vmImage: ubuntu-latest
