@@ -12,6 +12,11 @@ parameters:
   type: boolean
   default: false
 
+- name: terraformbuild
+  displayName: 'Terraform Build Process'
+  type: boolean
+  default: true
+
 stages:
 - stage: invoke_the_code
   jobs:
@@ -21,5 +26,5 @@ stages:
     steps:
     - ${{ if eq(parameters.experimentalTemplate, true) }}:
            - template: ./template/dotnet.yaml
-    - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+    - ${{ if eq(parameters.terraformbuild, true) }}:
            - template: ./template/terraform.yaml
