@@ -51,17 +51,17 @@
         artifact: 'drop'
         publishLocation: 'pipeline'
 
-- stage: deploytodev
-  dependsOn: "Build"
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/dev')
-  jobs:
-  - deployment:
-    pool:
-      vmimage: "windows-latest"
-    environment: 'dev'
-    strategy:
-      runOnce:
-        deploy:
+#- stage: deploytodev
+ # dependsOn: "Build"
+  #condition: eq(variables['Build.SourceBranch'], 'refs/heads/dev')
+  #jobs:
+  #- deployment:
+   # pool:
+    #  vmimage: "windows-latest"
+    #environment: 'dev'
+    #strategy:
+    #  runOnce:
+     #   deploy:
           steps:
           - task: AzureRmWebAppDeployment@4
             inputs:
