@@ -62,7 +62,7 @@
     #strategy:
     #  runOnce:
      #   deploy:
-    steps:
+   
   - task: AzureRmWebAppDeployment@4
       inputs:
               ConnectionType: 'AzureRM'
@@ -71,20 +71,3 @@
               WebAppName: 'khatrigtestapp'
               packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
 
-- stage: "Pull_dev"
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/dev')
-  jobs:
-  - job: validate
-    pool:
-      vmimage: "windows-latest"
-    continueOnError: false
-    steps:
-    - checkout: self
-    - task: ShaykiAbramczyk.CreatePullRequest.CreatePullRequest.CreatePullRequest@1
-      displayName: 'Create_Pull_Request'
-      inputs:
-          sourceBranch: dev
-          targetBranch: master
-          title: 'Merge from dev to master'
-          description: 'Merge from dev to master'
-          reviewers: 'khatrigaz500@outlook.com'
