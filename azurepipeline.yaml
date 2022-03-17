@@ -10,12 +10,12 @@ parameters:
 - name: experimentalTemplate
   displayName: 'Use experimental build process?'
   type: boolean
-  default: false
+  default: true
 
 - name: terraformbuild
   displayName: 'Terraform Build Process'
   type: boolean
-  default: true
+  default: false
 
 stages:
 - stage: invoke_the_code
