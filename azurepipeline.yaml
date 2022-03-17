@@ -25,6 +25,6 @@ stages:
       clean: all
     steps:
     - ${{ if eq(parameters.experimentalTemplate, true) }}:
-           - template: dotnet.yaml
+           - template: ./template/dotnet.yaml
     - ${{ if eq(parameters.terraformbuild, true) }}:
            - template: ./template/terraform.yaml
