@@ -19,8 +19,7 @@ stages:
     workspace:
       clean: all
     steps:
-      steps:
-      - ${{ if eq(parameters.experimentalTemplate, true) }}:
+    - ${{ if eq(parameters.experimentalTemplate, true) }}:
            - template: /template/dotnet.yml
-      - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+    - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
            - template: terraform.yml
