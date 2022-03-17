@@ -17,8 +17,8 @@
       inputs:
            terraformVersion: 0.13.4
     - task: TerraformTaskV1@0
-        displayName: 'init'
-        inputs:
+      displayName: 'init'
+      inputs:
           provider: 'azurerm'
           command: 'init'
           backendServiceArm: 'ARM'
