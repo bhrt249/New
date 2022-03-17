@@ -3,7 +3,7 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 #This is for Testing
-trigger: none
+#trigger: none
 
 stages:
 - stage: "Build"
