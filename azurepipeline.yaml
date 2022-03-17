@@ -10,7 +10,7 @@ parameters:
 - name: experimentalTemplate
   displayName: 'Use experimental build process?'
   type: boolean
-  default: true
+  default: false
 
 - name: terraformbuild
   displayName: 'Terraform Build Process'
