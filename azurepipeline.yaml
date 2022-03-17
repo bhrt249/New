@@ -20,6 +20,6 @@ stages:
       clean: all
     steps:
     - ${{ if eq(parameters.experimentalTemplate, true) }}:
-           - template: /template/dotnet.yml
+           - template: ./template/dotnet.yml
     - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-           - template: terraform.yml
+           - template: ./template/terraform.yml
