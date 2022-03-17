@@ -7,7 +7,7 @@
 #pr: none
 
 #stages :
-- stage: validate
+#- stage: validate
   #jobs:
   #- job: validate
    # continueOnError: false
