@@ -11,7 +11,7 @@
   #jobs:
   #- job: validate
    # continueOnError: false
-    #steps:
+    steps:
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
       displayName: "Install"
       inputs:
