@@ -5,7 +5,7 @@
 #This is for Testing
 #trigger: none
 
-stages:
+#stages:
 - stage: "Build"
   jobs:
   - job: "BuildJob"
