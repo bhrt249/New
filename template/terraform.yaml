@@ -22,7 +22,7 @@
           provider: 'azurerm'
           command: 'init'
           workingDirectory: 'terraform-code'
-          backendServiceArm: 'ARM'
+          backendServiceArm: 'Azure Pass - Sponsorship'
           backendAzureRmResourceGroupName: 'ADO'
           backendAzureRmStorageAccountName: 'adostg'
           backendAzureRmContainerName: 'adocontain'
