@@ -29,7 +29,7 @@
       displayName: Build
       inputs:
             command: 'build'
-            projects: '**/mvc-web-app.git/*/mvc-web-app.git.csproj'
+            projects: '**/mvc-web-app.git/*/*.csproj'
             //project: './**/*.csproj'
             arguments: '--configuration $(BuildConfiguration)'
 
