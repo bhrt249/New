@@ -39,22 +39,23 @@
       inputs:
               terraformVersion: 0.13.4
     - task: TerraformTaskV1@0
-      displayName: 'init'
+      displayName: 'plan'
       inputs:
             provider: 'azurerm'
-            command: 'init'
+            command: 'plan'
             projects: '**/*.tf'
             backendServiceArm: 'ARM'
             backendAzureRmResourceGroupName: 'ADO'
             backendAzureRmStorageAccountName: 'adostg'
             backendAzureRmContainerName: 'adocontain'
             backendAzureRmKey: 'terraform'
-    - task: TerraformTaskV1@0
-      inputs:
-              provider: 'azurerm'
-              command: 'plan'
-              projects: '**/*.tf'
-              environmentServiceNameAzureRM: 'ARM'
+            environmentServiceNameAzureRM: 'ARM'
+    #- task: TerraformTaskV1@0
+     # inputs:
+      #        provider: 'azurerm'
+       #      command: 'plan'
+        #      projects: '**/*.tf'
+         #     environmentServiceNameAzureRM: 'ARM'
   #- stage: apply
    # dependsOn: [plan]
     #condition: succeeded('plan')
