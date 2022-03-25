@@ -17,6 +17,12 @@
 
     steps:
     
+    - task: DotNetCoreCLI@2
+      displayName: 'Install dotnetsay'
+      inputs:
+        command: custom
+        custom: tool
+        arguments: 'install -g dotnetsay'
     - script: dotnet restore
       displayName: Restoring Dependencies
     #- task: DotNetCoreCLI@2
