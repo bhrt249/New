@@ -21,7 +21,7 @@
       inputs:
           provider: 'azurerm'
           command: 'init'
-          projects: '**/*.tf'
+          workingDirectory: 'terraform-code'
           backendServiceArm: 'ARM'
           backendAzureRmResourceGroupName: 'ADO'
           backendAzureRmStorageAccountName: 'adostg'
@@ -43,7 +43,7 @@
       inputs:
             provider: 'azurerm'
             command: 'plan'
-            projects: '**/*.tf'
+            workingDirectory: 'terraform-code'
             backendServiceArm: 'ARM'
             backendAzureRmResourceGroupName: 'ADO'
             backendAzureRmStorageAccountName: 'adostg'
