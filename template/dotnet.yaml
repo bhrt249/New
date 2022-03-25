@@ -27,8 +27,7 @@
       displayName: Build
       inputs:
             command: 'build'
-            //projects: '**/*/*.csproj'
-            projects: '$(Parameters.RestoreBuildProjects)'
+            projects: '**/*.csproj'
             arguments: '--configuration $(BuildConfiguration)'
 
     - task: DotNetCoreCLI@2
