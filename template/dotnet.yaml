@@ -52,7 +52,7 @@
       inputs:
         command: publish
         publishWebProjects: True
-        arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
+        arguments: '--configuration Release --output $(build.artifactstagingdirectory)'
         zipAfterPublish: True
 
     - task: PublishPipelineArtifact@1
