@@ -26,7 +26,7 @@
           backendAzureRmResourceGroupName: 'ADO'
           backendAzureRmStorageAccountName: 'adostg'
           backendAzureRmContainerName: 'adocontain'
-          backendAzureRmKey: 'terraform'
+          backendAzureRmKey: 'terraform1'
   #- stage: plan
    # dependsOn: [validate]
     #condition: succeeded('validate')
@@ -48,7 +48,7 @@
             backendAzureRmResourceGroupName: 'ADO'
             backendAzureRmStorageAccountName: 'adostg'
             backendAzureRmContainerName: 'adocontain'
-            backendAzureRmKey: 'terraform'
+            backendAzureRmKey: 'terraform1'
             environmentServiceNameAzureRM: 'ARM'
     #- task: TerraformTaskV1@0
      # inputs:
@@ -81,7 +81,7 @@
             backendAzureRmResourceGroupName: 'ADO'
             backendAzureRmStorageAccountName: 'adostg'
             backendAzureRmContainerName: 'adocontain'
-            backendAzureRmKey: 'terraform'
+            backendAzureRmKey: 'terraform1'
             environmentServiceNameAzureRM: 'ARM'
     #- task: TerraformTaskV1@0
      # inputs:
