@@ -12,8 +12,8 @@
    # pool:
     #  vmimage: "windows-latest"
 
-    #variables:
-     # buildConfiguration: 'Release'
+    variables:
+      buildConfiguration: 'Release'
 
     steps:
     
