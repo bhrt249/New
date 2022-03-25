@@ -12,8 +12,8 @@
    # pool:
     #  vmimage: "windows-latest"
 
-variables:
-  buildConfiguration: 'Release'
+#variables:
+ # buildConfiguration: 'Release'
 
     steps:
     
@@ -37,7 +37,7 @@ variables:
          command: 'build'
         # projects: '**/mvc-web-app.git/*/*.csproj'
          projects: '**/*.csproj'
-         arguments: '--configuration $(BuildConfiguration)'
+         arguments: '--configuration Release'
     
 
     - task: DotNetCoreCLI@2
