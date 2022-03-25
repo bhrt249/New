@@ -44,11 +44,11 @@
             provider: 'azurerm'
             command: 'plan'
             workingDirectory: 'terraform-code'
-            backendServiceArm: 'ARM'
-            backendAzureRmResourceGroupName: 'ADO'
-            backendAzureRmStorageAccountName: 'adostg'
-            backendAzureRmContainerName: 'adocontain'
-            backendAzureRmKey: 'terraform1'
+            #backendServiceArm: 'ARM'
+            #backendAzureRmResourceGroupName: 'ADO'
+            #backendAzureRmStorageAccountName: 'adostg'
+            #backendAzureRmContainerName: 'adocontain'
+            #backendAzureRmKey: 'terraform1'
             environmentServiceNameAzureRM: 'ARM'
     #- task: TerraformTaskV1@0
      # inputs:
@@ -77,11 +77,11 @@
             provider: 'azurerm'
             command: 'apply'
             workingDirectory: 'terraform-code'
-            backendServiceArm: 'ARM'
-            backendAzureRmResourceGroupName: 'ADO'
-            backendAzureRmStorageAccountName: 'adostg'
-            backendAzureRmContainerName: 'adocontain'
-            backendAzureRmKey: 'terraform1'
+            #backendServiceArm: 'ARM'
+            #backendAzureRmResourceGroupName: 'ADO'
+            #backendAzureRmStorageAccountName: 'adostg'
+            #backendAzureRmContainerName: 'adocontain'
+            #backendAzureRmKey: 'terraform1'
             environmentServiceNameAzureRM: 'ARM'
     #- task: TerraformTaskV1@0
      # inputs:
