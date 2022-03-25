@@ -36,7 +36,7 @@
       inputs:
          command: 'build'
         # projects: '**/mvc-web-app.git/*/*.csproj'
-         projects: '**/*/*.csproj'
+         projects: '**/*.csproj'
          arguments: '--configuration $(BuildConfiguration)'
     
 
