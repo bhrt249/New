@@ -21,6 +21,7 @@
       inputs:
           provider: 'azurerm'
           command: 'init'
+          projects: '**/*.tf'
           backendServiceArm: 'ARM'
           backendAzureRmResourceGroupName: 'ADO'
           backendAzureRmStorageAccountName: 'adostg'
