@@ -22,7 +22,7 @@
         version: 5.0.x
         performMultiLevelLookup: true
         includePreviewVersions: true # Required for preview versions
-        
+
     - task: DotNetCoreCLI@2
       displayName: Restore
       inputs:
@@ -34,7 +34,7 @@
       displayName: Build
       inputs:
             command: 'build'
-            projects: '**/*.csproj'
+            projects: '**/**/*.csproj'
             //project: './**/*.csproj'
             arguments: '--configuration $(BuildConfiguration)'
 
