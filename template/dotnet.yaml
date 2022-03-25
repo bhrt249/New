@@ -36,8 +36,8 @@
       inputs:
          command: 'build'
         # projects: '**/mvc-web-app.git/*/*.csproj'
-         projects: '**/*.csproj'
-         #arguments: '--configuration $(BuildConfiguration)'
+         projects: '**/*/*.csproj'
+         arguments: '--configuration $(BuildConfiguration)'
     
 
     - task: DotNetCoreCLI@2
