@@ -20,8 +20,7 @@
       displayName: Restore
       inputs:
               command: 'restore'
-              //projects: '**/*.csproj'
-              project: 'mvc-web-app.git/*.csproj'
+              projects: '**/*.csproj'
               feedsToUse: 'select'
 
     - task: DotNetCoreCLI@2
