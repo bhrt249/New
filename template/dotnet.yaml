@@ -25,13 +25,15 @@
               projects: '**/*.csproj'
               feedsToUse: 'select'
 
-    - task: DotNetCoreCLI@2
-      displayName: Build
-      inputs:
-            command: 'build'
-            projects: '**/mvc-web-app.git/*/*.csproj'
-            //project: './**/*.csproj'
-            arguments: '--configuration $(BuildConfiguration)'
+    #- task: DotNetCoreCLI@2
+     # displayName: Build
+      #inputs:
+       #     command: 'build'
+        #    projects: '**/mvc-web-app.git/*/*.csproj'
+         #  //project: './**/*.csproj'
+          #  arguments: '--configuration $(BuildConfiguration)'
+    - script: dotnet build --configuration $(buildConfiguration)
+      displayName: 'dotnet build $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
       displayName: Test
