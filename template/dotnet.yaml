@@ -17,13 +17,14 @@
 
     steps:
     
-
-    - task: DotNetCoreCLI@2
-      displayName: Restore
-      inputs:
-              command: 'restore'
-              projects: '**/*.csproj'
-              feedsToUse: 'select'
+    - script: dotnet restore
+      displayName: Restoring Dependencies
+    #- task: DotNetCoreCLI@2
+     # displayName: Restore
+      #inputs:
+       #       command: 'restore'
+        #      projects: '**/*.csproj'
+         #     feedsToUse: 'select'
 
     #- task: DotNetCoreCLI@2
      # displayName: Build
