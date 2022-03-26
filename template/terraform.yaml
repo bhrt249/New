@@ -77,7 +77,7 @@
             provider: 'azurerm'
             command: 'apply'
             workingDirectory: 'terraform-code'
-            #backendServiceArm: 'ARM'
+            backendServiceArm: 'ARM'
             #backendAzureRmResourceGroupName: 'ADO'
             #backendAzureRmStorageAccountName: 'adostg'
             #backendAzureRmContainerName: 'adocontain'
