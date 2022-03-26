@@ -26,7 +26,7 @@
           backendAzureRmResourceGroupName: 'ADO'
           backendAzureRmStorageAccountName: 'adostg'
           backendAzureRmContainerName: 'adocontain'
-          backendAzureRmKey: 'terraform1'
+          backendAzureRmKey: 'terraform2'
   #- stage: plan
    # dependsOn: [validate]
     #condition: succeeded('validate')
