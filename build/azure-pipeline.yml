@@ -19,7 +19,7 @@ jobs:
 - template: dotnet.yaml
   parameters:
     name: mvc-web-app
-    solutionFolder: 'mvc-web-app'
+    solutionFolder: 'mvc-web-app.git'
     projectFile: '/mvc-web-app.git/mvc-web-app.csproj'
 
 - template: terraform.yaml
