@@ -1,5 +1,4 @@
-  parameters:
-    name: '--'
+  
 
 # Starter pipeline
 # Start with a minimal pipeline that you can customize to build and deploy your code.
@@ -11,7 +10,7 @@
 #stages:
 #- stage: "Build"
   jobs:
-  - job: ${{ parameters.name }}
+  - job: dotnet
     dependsOn: Build_Queue
     continueOnError: true
     pool:
