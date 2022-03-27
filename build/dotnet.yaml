@@ -16,7 +16,6 @@
  # buildConfiguration: 'Release'
 
     steps:
-    
     - task: DotNetCoreCLI@2
       displayName: 'Install dotnetsay'
       inputs:
