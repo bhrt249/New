@@ -5,8 +5,8 @@
 #This is for Testing
 #trigger: none
 
-stages:
-- stage: "Build"
+#stages:
+#- stage: "Build"
   jobs:
   - job: "BuildJob"
     pool:
