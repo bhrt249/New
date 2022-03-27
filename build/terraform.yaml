@@ -1,5 +1,5 @@
   parameters:
-    name: '--'
+    #name: '--'
     solutionFolder: '--'
 #trigger: none
 
@@ -12,7 +12,7 @@
 #stages :
 #- stage: validate
   jobs:
-  - job: ${{ parameters.name }}
+  - job: terraform
     dependsOn: Build_Queue
     continueOnError: true
     condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
