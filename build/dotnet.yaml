@@ -1,5 +1,5 @@
   parameters:
-    name: '--'
+    #name: '--'
     solutionFolder: '--'
 
 # Starter pipeline
@@ -12,7 +12,7 @@
 #stages:
 #- stage: "Build"
   jobs:
-  - job: ${{ parameters.name }}
+  - job: dotnet
     dependsOn: Build_Queue
     continueOnError: true
     condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
