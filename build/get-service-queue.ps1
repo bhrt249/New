@@ -30,10 +30,9 @@ $editedFiles | ForEach-Object {
 			Write-Host "mvc-web-app.git changed"
 			AppendQueueVariable "mvc-web-app.git"
 		}
-		"terraform-code/*" { 
-				Write-Host "terraform-code changed" 
-				AppendQueueVariable "terraform-code"
-				AppendQueueVariable "mvc-web-app.git"
+	"terraform-code/*" { 
+			Write-Host "terraform-code changed" 
+			AppendQueueVariable "terraform-code"
 		}
 		        # The rest of your path filters
     }
