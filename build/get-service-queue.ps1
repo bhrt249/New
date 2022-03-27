@@ -26,11 +26,11 @@ $editedFiles = git diff HEAD HEAD~ --name-only
 # Check each file that was changed and add that Service to Build Queue
 $editedFiles | ForEach-Object {	
     Switch -Wildcard ($_ ) {		
-        "service1/*" { 
+        "mvc-web-app.git/*" { 
 			Write-Host "mvc-web-app.git changed"
 			AppendQueueVariable "mvc-web-app.git"
 		}
-        "service2/*" { 
+        "terraform-code/*" { 
 			Write-Host "terraform-code changed" 
 			AppendQueueVariable "terraform-code"
 		}
