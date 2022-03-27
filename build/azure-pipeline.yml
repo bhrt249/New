@@ -16,22 +16,16 @@ jobs:
       filePath: ./build/get-service-queue.ps1
     displayName: 'Get Service Build Queue'    
 
-- template: build-template.yml
+- template: dotnet.yaml
   parameters:
-    name: Service_01
-    solutionFolder: 'service1'
-    projectFile: '/service1.api/service1.api.csproj'
+    name: mvc-web-app
+    solutionFolder: 'mvc-web-app'
+    projectFile: '/mvc-web-app.git/mvc-web-app.csproj'
 
-- template: build-template.yml
+- template: terraform.yaml
   parameters:
-    name: Service_02
-    solutionFolder: 'service2'
-    projectFile: '/service2.api/service2.api.csproj'
-
-- template: build-template.yml
-  parameters:
-    name: Service_03
-    solutionFolder: 'service3'
-    projectFile: '/service3.api/service3.api.csproj'
+    name: terraform-code
+    solutionFolder: 'terraform-code'
+    projectFile: 'terraform-code/main.tf'
 
 # Add more template jobs with parameters for other Services
