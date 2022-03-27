@@ -1,3 +1,6 @@
+  parameters:
+    name: '--'
+
 #trigger: none
 
 #pool:
@@ -9,8 +12,9 @@
 #stages :
 #- stage: validate
   jobs:
-  - job: validate
-    continueOnError: false
+  - job: ${{ parameters.name }}
+    dependsOn: Build_Queue
+    continueOnError: true
     steps:
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
       displayName: "Install"
