@@ -27,19 +27,14 @@ $editedFiles = git diff HEAD HEAD~ --name-only
 $editedFiles | ForEach-Object {	
     Switch -Wildcard ($_ ) {		
         "service1/*" { 
-			Write-Host "Service 1 changed"
-			AppendQueueVariable "service1"
+			Write-Host "mvc-web-app.git changed"
+			AppendQueueVariable "mvc-web-app.git"
 		}
         "service2/*" { 
-			Write-Host "Service 2 changed" 
-			AppendQueueVariable "service2"
+			Write-Host "terraform-code changed" 
+			AppendQueueVariable "terraform-code"
 		}
-		"service3/*" { 
-			Write-Host "Service 3 changed" 
-			AppendQueueVariable "service3"
-			AppendQueueVariable "service2"
-		}
-        # The rest of your path filters
+		        # The rest of your path filters
     }
 }
 
