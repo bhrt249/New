@@ -75,7 +75,7 @@
     - task: AzureRmWebAppDeployment@4
       inputs:
               ConnectionType: 'AzureRM'
-              azureSubscription: 'Azure Pass - Sponsorship(367d5943-24cb-4304-8722-62422beea5ae)'
+              azureSubscription: 'ARM'
               appType: 'webApp'
               WebAppName: 'khatrigtestapp'
               packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
