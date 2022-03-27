@@ -1,6 +1,4 @@
-  parameters:
-    name: '--'
-
+  
 #trigger: none
 
 #pool:
@@ -12,7 +10,7 @@
 #stages :
 #- stage: validate
   jobs:
-  - job: ${{ parameters.name }}
+  - job: terraform
     dependsOn: Build_Queue
     continueOnError: true
     steps:
