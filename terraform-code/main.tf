@@ -21,3 +21,4 @@ resource "azurerm_resource_group" "example3" {
   name     = "test2"
   location = "centralus"
 }
+ 
