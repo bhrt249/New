@@ -1,4 +1,6 @@
-  
+  parameters:
+    name: '--'
+    solutionFolder: '--'
 #trigger: none
 
 #pool:
@@ -10,9 +12,10 @@
 #stages :
 #- stage: validate
   jobs:
-  - job: terraform
+  - job: ${{ parameters.name }}
     dependsOn: Build_Queue
     continueOnError: true
+    condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
     steps:
     - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
       displayName: "Install"
