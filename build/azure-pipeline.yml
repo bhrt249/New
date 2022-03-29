@@ -32,6 +32,6 @@ jobs:
   parameters:
     name: node-js
     solutionFolder: 'node-js'
-    projectFile: 'node-js/package.json'
+    projectFile: '/node-js/package.json'
 
 # Add more template jobs with parameters for other Services
