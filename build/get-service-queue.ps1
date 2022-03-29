@@ -34,6 +34,10 @@ $editedFiles | ForEach-Object {
 			Write-Host "terraform-code changed" 
 			AppendQueueVariable "terraform-code"
 		}
+	 "node-js/*" { 
+			Write-Host "node-js changed" 
+			AppendQueueVariable "node-js"
+		}
 		        # The rest of your path filters
     }
 }
