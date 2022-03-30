@@ -31,7 +31,7 @@
        myBuildQueue: $[ dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'] ]
     condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
     pool:
-      vmImage: "ubuntu-latest"
+      vmImage: "windows-latest"
 
     steps:
     - task: NodeTool@0
@@ -87,6 +87,5 @@
               appType: 'webAppLinux'
               appName: 'testappsvcayo'
               runtimeStack: 'NODE|10.10'
-              #package: '$(Pipeline.Workspace)/**/*.zip'
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              package: '$(Pipeline.Workspace)/**/*.zip'
               startUpCommand: 'npm run start'
