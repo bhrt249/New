@@ -18,8 +18,8 @@ jobs:
       displayName: 'Install Node.js'
     - script: npm install
       displayName: npm install
-    - script: npm run test # If you are using TypeScript
-      displayName: npm run test
+    #- script: npm run test # If you are using TypeScript
+     # displayName: npm run test
     - task: AzureWebApp@1 # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-rm-web-app?view=azure-devops
       inputs:
         azureSubscription: 'ARM'
