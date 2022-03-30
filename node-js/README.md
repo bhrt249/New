@@ -2,7 +2,7 @@
 services: app-service\web, app-service
 platforms: node
 author: cephalin 
----
+--- 
 # Node.js sample for Azure App Service - Express
 
 This is a Node.js web app built on the [Express](http://expressjs.com/) framework that you can deploy 
