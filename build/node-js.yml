@@ -85,6 +85,6 @@
               ConnectionType: 'AzureRM'
               azureSubscription: 'ARM'
               appType: 'webApp'
-              appName: 'applinux11'
+              appName: 'testappsvcayo'
               package: '$(Pipeline.Workspace)/**/*.zip'
               startUpCommand: 'npm run start'
