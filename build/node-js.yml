@@ -100,9 +100,9 @@
               
               ConnectionType: 'AzureRM'
               azureSubscription: 'ARM'
-              appType: 'webAppLinux'
+              appType: 'webApp'
               appName: 'testappsvcayo'
-              runtimeStack: 'NODE|10.10'
+              #runtimeStack: 'NODE|10.10'
               #package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              package: '$(Pipeline.Workspace)/*/*.zip'
-              startUpCommand: 'npm run start'
+              package: '$(Pipeline.Workspace)/**/*.zip'
+             #startUpCommand: 'npm run start'
