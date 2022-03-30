@@ -55,9 +55,23 @@
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
+      
+    - task: DotNetCoreCLI@2
+      displayName: Publish
+      inputs:
+        command: publish
+        publishWebProjects: True
+        arguments: '--configuration Release --output $(build.artifactstagingdirectory)'
+        zipAfterPublish: True
+        
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(build.ArtifactStagingDirectory)'
+        artifact: 'drop'
+        publishLocation: 'pipeline'
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
+    #- upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+     # artifact: drop
 
 #- stage: Deploy
  # displayName: Deploy stage
@@ -89,6 +103,6 @@
               appType: 'webAppLinux'
               appName: 'testappsvcayo'
               runtimeStack: 'NODE|10.10'
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              #package: '$(Pipeline.Workspace)/drop/*.zip'
+              #package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              package: '$(Pipeline.Workspace)/*/*.zip'
               startUpCommand: 'npm run start'
