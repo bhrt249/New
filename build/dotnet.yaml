@@ -87,4 +87,4 @@
               azureSubscription: 'ARM'
               appType: 'webApp'
               WebAppName: 'khatrigtestapp'
-              packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
+              package: '$(Pipeline.Workspace)/**/*.zip'
