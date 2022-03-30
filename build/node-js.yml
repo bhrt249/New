@@ -86,5 +86,5 @@
               azureSubscription: 'ARM'
               appType: 'webApp'
               appName: 'nelinuxgk'
-              packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
+              package: '$(Pipeline.Workspace)/**/*.zip'
               startUpCommand: 'npm run start'
