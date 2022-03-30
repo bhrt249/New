@@ -31,7 +31,7 @@
        myBuildQueue: $[ dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'] ]
     condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
     pool:
-      vmImage: "ubuntu-latest"
+      vmImage: "windows-latest"
 
     steps:
     - task: NodeTool@0
