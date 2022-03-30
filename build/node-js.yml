@@ -31,7 +31,7 @@
        myBuildQueue: $[ dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'] ]
     condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
     pool:
-      vmImage: "windows-latest"
+      vmImage: "ubuntu-latest"
 
     steps:
     - task: NodeTool@0
@@ -73,6 +73,8 @@
           #steps:
     - task: AzureWebApp@1
       displayName: 'Azure Web App Deploy: applinux11'
+      pool:
+      vmImage: "ubuntu-latest"
       inputs:
               #ConnectionType: 'AzureRM'
               #azureSubscription: 'ARM'
@@ -88,5 +90,5 @@
               appName: 'testappsvcayo'
               runtimeStack: 'NODE|10.10'
               package: $(Pipeline.Workspace)/**/$(Build.BuildId).zip
-              #package: '$(Pipeline.Workspace)/**/*.zip'
+              #package: '$(Pipeline.Workspace)/drop/*.zip'
               startUpCommand: 'npm run start'
