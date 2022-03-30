@@ -73,8 +73,6 @@
           #steps:
     - task: AzureWebApp@1
       displayName: 'Azure Web App Deploy: applinux11'
-      pool:
-        vmImage: "ubuntu-latest"
       inputs:
               #ConnectionType: 'AzureRM'
               #azureSubscription: 'ARM'
