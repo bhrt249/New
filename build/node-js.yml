@@ -56,22 +56,9 @@
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
       
-    - task: DotNetCoreCLI@2
-      displayName: Publish
-      inputs:
-        command: publish
-        publishWebProjects: True
-        arguments: '--configuration Release --output $(build.artifactstagingdirectory)'
-        zipAfterPublish: True
-        
-    - task: PublishPipelineArtifact@1
-      inputs:
-        targetPath: '$(build.ArtifactStagingDirectory)'
-        artifact: 'drop'
-        publishLocation: 'pipeline'
-
-    #- upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-     # artifact: drop
+    
+    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+      artifact: drop
 
 #- stage: Deploy
  # displayName: Deploy stage
