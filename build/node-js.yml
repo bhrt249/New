@@ -1,95 +1,31 @@
-# Node.js Express Web App to Linux on Azure
-# Build a Node.js Express app and deploy it to Azure as a Linux web app.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 #trigger:
-#- master
+ # - '*' # Run pipeline when a commit is pushed to any branch
+  #- 'refs/tags/*' # Run pipeline when a tag is pushed
 
-#variables:
+jobs:
+- job: test
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - script: npm install
+    displayName: npm install
+  - script: npm run test
+    displayName: npm run test
 
-  # Azure Resource Manager connection created during pipeline creation
- # azureSubscription: 'c0015f8e-de44-4e4b-b0c9-2763ae2b0636'
-
-  # Web app name
-  #webAppName: 'applinux11'
-
-  # Environment name
-  #environmentName: 'applinux11'
-
-  # Agent VM image name
- # vmImageName: 'ubuntu-latest'
-
-#stages:
-#stage: Build
- # displayName: Build stage
-  jobs:
-  - job: nodejs
-    dependsOn: Build_Queue
-    continueOnError: true
-    variables:
+- job: deploy
+  variables:
        myBuildQueue: $[ dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'] ]
     condition: and(succeeded(), contains(dependencies.Build_Queue.outputs['setBuildQueue.buildQueue'], '${{ parameters.solutionFolder }}'))
-    pool:
-      vmImage: "ubuntu-latest"
-
-    steps:
-    - task: NodeTool@0
-      inputs:
-        versionSpec: '10.x'
-      displayName: 'Install Node.js'
-
-   
-   #- script: |
-    #    npm install
-     #   npm run build --if-present
-      #  npm run test --if-present
-    - script: npm install
-      displayName: 'npm install, build and test'
-
-    - task: ArchiveFiles@2
-      displayName: 'Archive files'
-      inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-        includeRootFolder: false
-        archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-        replaceExistingArchive: true
-      
-    
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
-
-#- stage: Deploy
- # displayName: Deploy stage
-  #dependsOn: Build
-  #condition: succeeded()
-  #jobs:
-  #- deployment: Deploy
-   # displayName: Deploy
-   # environment: $(environmentName)
-   # pool:
-    #  vmImage: $(vmImageName)
-   # strategy:
-     # runOnce:
-        #deploy:
-          #steps:
-    - task: AzureWebApp@1
-      displayName: 'Azure Web App Deploy: applinux11'
-      inputs:
-              #ConnectionType: 'AzureRM'
-              #azureSubscription: 'ARM'
-             # appType: webAppLinux
-              #appName: 'nelinuxgk'
-             # runtimeStack: 'NODE|10.10'
-              #package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              #packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
-              
-              ConnectionType: 'AzureRM'
-              azureSubscription: 'ARM'
-              appType: 'webApp'
-              appName: 'testappsvcayo'
-              #runtimeStack: 'NODE|10.10'
-              #package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              package: '$(Pipeline.Workspace)/**/*.zip'
-             #startUpCommand: 'npm run start'
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+  - script: npm install
+    displayName: npm install
+#  - script: npm run build # If you are using TypeScript
+#    displayName: npm run build
+  - task: AzureWebApp@1 # https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-rm-web-app?view=azure-devops
+    inputs:
+      azureSubscription: 'ARM'
+      appName: 'testappsvcayo'
+      package: $(Build.SourcesDirectory)
+      customWebConfig: -Handler iisnode -NodeStartFile app.js -appType node # https://docs.microsoft.com/en-us/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yamln
