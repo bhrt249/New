@@ -84,8 +84,8 @@
               
               ConnectionType: 'AzureRM'
               azureSubscription: 'ARM'
-              appType: 'webAppLinux'
-              appName: 'testappsvcayo'
+              appType: 'webAppWindows'
+              appName: 'winvm01'
               runtimeStack: 'NODE|10.10'
               package: '$(Pipeline.Workspace)/**/*.zip'
               startUpCommand: 'npm run start'
