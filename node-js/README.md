@@ -1,7 +1,7 @@
 ---
 services: app-service\web, app-service
 platforms: node
-author: cephalin  
+author: cephalin   
 --- 
 # Node.js sample for Azure App Service - Express
 
