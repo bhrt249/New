@@ -16,7 +16,4 @@ resource "azurerm_resource_group" "example12" {
   location = "centralus"
 }
 
-resource "azurerm_resource_group" "example13" {
-  name     = "example13"
-  location = "centralus"
-}
+
