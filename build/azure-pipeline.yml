@@ -28,10 +28,5 @@ jobs:
     solutionFolder: 'terraform-code'
     projectFile: 'terraform-code/main.tf'
     
-- template: node-js.yml
-  parameters:
-    name: node-js
-    solutionFolder: 'node-js'
-    projectFile: '/node-js/app.js'
 
 # Add more template jobs with parameters for other Services
