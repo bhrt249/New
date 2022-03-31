@@ -11,3 +11,7 @@ backend "azurerm" {}
 provider "azurerm" {
  features {}
 }
+resource "azurerm_resource_group" "example12" {
+  name     = "example12"
+  location = "centralus"
+}
